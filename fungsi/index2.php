@@ -13,7 +13,7 @@ $fungsi_is_array = is_array($a);
 $count = count($a);
 
 // fungsi mengenkripsikan karakter MDS
-$enkripsi = md5('pratam tukang tidur');
+$enkripsi = md5('pratama tukang tidur');
 
 // fungsi 
 var_dump($fungsi_is_null);
