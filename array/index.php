@@ -13,8 +13,9 @@ $siswa = [
     'sipalingnetral' => 'hasan'
 ];
 
-echo "siapa si paling gay? {$siswa['1']}";
-
+echo "siapa si paling ganz...?";
+echo "<br/>";
+echo "{$siswa['1']}";
 //array multideimension
 //ada array di dalam array
 
