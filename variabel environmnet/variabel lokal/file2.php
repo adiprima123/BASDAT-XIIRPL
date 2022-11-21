@@ -9,4 +9,4 @@ function haloDunia () {
 
 haloDunia();
 
-echo $nama; # Nurul Huda
+echo $nama; # adiprima raharja

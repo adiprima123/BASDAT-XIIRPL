@@ -1,9 +1,7 @@
-<?php
+<?php 
+// variabel global
 
-//variabel global
-$nama = 'adi prima';
-echo "file-01.php <br>";
-echo "nama : {$nama} <br><br>";
-
-
+$nama = 'Rendi Fadilah';
+    echo "file-01.php <br>";
+    echo "Nama : {$nama} <br><br>";
 ?>
