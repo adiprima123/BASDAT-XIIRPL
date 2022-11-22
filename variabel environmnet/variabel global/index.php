@@ -13,7 +13,7 @@
     // lokal
     $skil = " g4y";
     function lokal(){
-        $skil = " saya bisa col1 dan";
+        $skil = " saya bisa belajar ";
         echo $skil;
     }
     lokal();
