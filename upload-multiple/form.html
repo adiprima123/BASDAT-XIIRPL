@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>multiple files upload</title>
+    </head>
+    <body>
+        <h1>upload multiple files</h1>
+        <form action="proses.php" method="post" enctype="multipart/form-data">
+            <div>
+                <label>pilih gambar</label>
+                <input type="file" name="listgambar[]" accept="image/*" multiple>
+            </div>
+            <button style="margin-top: 10px;">upload</button>
+        </form>
+    </body>
+</html>

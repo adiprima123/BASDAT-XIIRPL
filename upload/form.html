@@ -3,11 +3,16 @@
         <title>upload file 1</title>
     </head>
     <body>
+        <form action="proses.php" method="post">
         <h1>belajar upload file</h1>
         <form action="proses.php" method="post" enctype="multipart/form-data">
             <div>
                 <label>foto</label>
                 <input type="file" name="foto">
+            </div>
+            <div>
+                <label>foto ktp</label>
+                <input type="file" name="ktp">
             </div>
             <div style="margin-top:10px">
                 <button>upload</button>

@@ -4,14 +4,14 @@
 
     // statis
     function statis(){
-        static $var = " saya adalah anggota Brizzer";
+        static $var = " saya adalah anggota perpus";
         echo $var;
         $var++;
     }
     statis();
 
     // lokal
-    $skil = " g4y";
+    $skil = " gtw";
     function lokal(){
         $skil = " saya bisa belajar ";
         echo $skil;
