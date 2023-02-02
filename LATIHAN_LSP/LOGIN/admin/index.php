@@ -45,9 +45,12 @@
         $jumlah_buku = mysqli_num_rows($buku);
         $jumlah_anggota = mysqli_num_rows($anggota);
         ?>
+        
         <!-- END -->
         <br>
         <center> <h4>Welcome <?php echo $_SESSION['admin']?> anda telah Login</h4> </center>
+        <button><a href="sandbox.php">Sandbox</a></button>
+        <button><a href="pesan.php">paket</a></button>
         <br>
         <body>
         <!DOCTYPE html>
@@ -63,30 +66,24 @@
             <br>
             <br>
             <h3>TOTAL BUKU TERSEDIA: <?php echo $jumlah_buku;?></h3>
-            <h5>Total Semua Harga Buku: <?php
-    $db = mysqli_query($koneksi, "SELECT * FROM buku;");
-    while($r = mysqli_fetch_array($db)){
-        $h[] = $r['harga'];
-    }
-    $totalHarga = array_sum($h);
-    echo "Rp. " . number_format($totalHarga) . " ,-";
-    ?></h5>
     <a href="add.php" class="btn btn-md btn-success" style="margin-bottom: 10px">Tambah Data</a>
+    <a href="cetak_buku.php" class="btn btn-md btn-warning" style="margin-bottom: 10px">Cetak</a>
     <a href="../logout.php" class="btn btn-md btn-danger" style="margin-bottom: 10px">Logout</a>
-	<table class="table1">
-		<tr>
-            <th>Id_buku</th>
+    <table class="table1">
+      <tr>
+        <th>Id_buku</th>
             <th>Katalog</th>
             <th>Judul buku</th>
             <th>Pengarang</th>
             <th>Tahun terbit</th>
             <th>Penerbit</th>
             <th>Harga</th>
+            <th>Quantity</th>
             <th>Aksi</th>
-		</tr>
-
-        <!-- menampilkan data buku -->
-        <?php 
+          </tr>
+          
+          <!-- menampilkan data buku -->
+          <?php 
         include '../koneksi-db.php';
         $buku = mysqli_query($koneksi, "SELECT * FROM buku");
         foreach ($buku as $row){
@@ -97,7 +94,9 @@
             echo "<td>".$pengarang = $row['pengarang']."</td>";
             echo "<td>".$thn_terbit = $row['thn_terbit']."</td>";
             echo "<td>".$penerbit = $row['penerbit']."</td>";
-            echo "<td>".$harga = $row['harga']."</td>";
+            echo "<td>"."Rp. " . number_format($row['harga'])."</td>";
+            echo "<td>".$qty = $row['qty']."</td>";
+            
             ?>
             <td> 
                 <a href="update.php?id_buku=<?php echo $row['id_buku'] ?>" class="btn btn-sm btn-primary">Edit</a>
@@ -110,10 +109,20 @@
         ?>
 	</table>	
   <br>
+  <center>Total Harga Buku :<h6><?php
+    $db = mysqli_query($koneksi, "SELECT * FROM buku;");
+    while($r = mysqli_fetch_array($db)){
+      $h[] = $r['harga'];
+    }
+    $totalHarga = array_sum($h);
+    echo "Rp. " . number_format($totalHarga) . " ,-";
+    ?></h6></center>
+  <br>
   <br>
   <h1>Data Anggota</h1>
   <h3>Total Anggota : <?php echo  $jumlah_anggota; ?></h3>
-    <a href="add_anggota.php" class="btn btn-md btn-warning" style="margin-bottom: 10px">Tambah Anggota</a>
+    <a href="add_anggota.php" class="btn btn-md btn-success" style="margin-bottom: 10px">Tambah Anggota</a>
+    <a href="cetak_anggota.php" class="btn btn-md btn-warning" style="margin-bottom: 10px">Cetak</a>
 	<table class="table1">
 		<tr>
             <th>Id_anggota</th>
